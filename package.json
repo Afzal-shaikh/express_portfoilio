@@ -1,0 +1,19 @@
+{
+  "name": "assignment1-code",
+  "version": "1.0.0",
+  "description": "assignment for web application development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Afzal-shaikh/express_portfoilio.git"
+  },
+  "author": "Afzal-Shaikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Afzal-shaikh/express_portfoilio/issues"
+  },
+  "homepage": "https://github.com/Afzal-shaikh/express_portfoilio#readme"
+}
