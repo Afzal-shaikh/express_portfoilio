@@ -1,1 +1,10 @@
 /* Custom css here */
+body {
+  height: 100%;
+  background-color: #000000;
+  background-color: #000000;
+  background-image: url("https://afzal-shaikh.github.io/images/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: 0 0;
+  background-size: cover;
+}

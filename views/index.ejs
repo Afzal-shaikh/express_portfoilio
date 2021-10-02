@@ -11,67 +11,9 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
+<%- include partials/main_nav.ejs %>
 
-        <li class="nav-item">
-          <!--Navigate to Home -->
-          <% if (title == "Home") { %>
-            <a class="nav-link active" aria-current="page" href="/home">
-          <% } else { %>
-            <a class="nav-link" aria-current="page" href="/home">
-          <% } %> 
-            <i class="fas fa-lg fa-home"></i> Home</a>
-          </li>
-          <!--Navigate to About Me -->
-          <li class="nav-item">
-            <% if (title == "About Me") { %>
-              <a class="nav-link active" aria-current="page" href="/about">
-            <% } else { %>
-              <a class="nav-link" aria-current="page" href="/about">
-            <% } %> 
-              <i class="fas fa-lg fa-info-circle"></i> About Me</a>
-          </li>
-          <!--Navigate to Projects -->
-          <li class="nav-item">
-            <% if (title == "Projects") { %>
-              <a class="nav-link active" aria-current="page" href="/projects">
-            <% } else { %>
-              <a class="nav-link" aria-current="page" href="/projects">
-            <% } %> 
-              <i class="fas fa-lg fa-project-diagram"></i> Projects</a>
-          </li>
-          <!--Navigate to Services -->
-          <li class="nav-item">
-            <% if (title == "Services") { %>
-              <a class="nav-link active" aria-current="page" href="/services">
-            <% } else { %>
-              <a class="nav-link" aria-current="page" href="/services">
-            <% } %> 
-              <i class="fas fa-lg fa-hand-holding-heart"></i> Services</a>
-          </li>
-          <!--Navigate to Contact Me-->
-          <li class="nav-item">
-            <% if (title == "Contact Me") { %>
-              <a class="nav-link active" aria-current="page" href="/contact">
-            <% } else { %>
-              <a class="nav-link" aria-current="page" href="/contact">
-            <% } %> 
-              <i class="fas fa-lg fa-mobile-alt"></i> Contact Me</a>
-          </li>
-
-         
-      </div>
-    </div>
-  </nav>
-
+  
 <!-- Main section -->
 <main class="container">
   <div class="jumbotron">
