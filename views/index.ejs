@@ -21,26 +21,52 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
 
+        <li class="nav-item">
+          <!--Navigate to Home -->
+          <% if (title == "Home") { %>
+            <a class="nav-link active" aria-current="page" href="/home">
+          <% } else { %>
+            <a class="nav-link" aria-current="page" href="/home">
+          <% } %> 
+            <i class="fas fa-lg fa-home"></i> Home</a>
+          </li>
+          <!--Navigate to About Me -->
           <li class="nav-item">
-           
-            <a class="nav-link active" aria-current="page" href="/home"> <i class="fas fa-home fa-lg"></i> Home</a>
+            <% if (title == "About Me") { %>
+              <a class="nav-link active" aria-current="page" href="/about">
+            <% } else { %>
+              <a class="nav-link" aria-current="page" href="/about">
+            <% } %> 
+              <i class="fas fa-lg fa-info-circle"></i> About Me</a>
+          </li>
+          <!--Navigate to Projects -->
+          <li class="nav-item">
+            <% if (title == "Projects") { %>
+              <a class="nav-link active" aria-current="page" href="/projects">
+            <% } else { %>
+              <a class="nav-link" aria-current="page" href="/projects">
+            <% } %> 
+              <i class="fas fa-lg fa-project-diagram"></i> Projects</a>
+          </li>
+          <!--Navigate to Services -->
+          <li class="nav-item">
+            <% if (title == "Services") { %>
+              <a class="nav-link active" aria-current="page" href="/services">
+            <% } else { %>
+              <a class="nav-link" aria-current="page" href="/services">
+            <% } %> 
+              <i class="fas fa-lg fa-hand-holding-heart"></i> Services</a>
+          </li>
+          <!--Navigate to Contact Me-->
+          <li class="nav-item">
+            <% if (title == "Contact Me") { %>
+              <a class="nav-link active" aria-current="page" href="/contact">
+            <% } else { %>
+              <a class="nav-link" aria-current="page" href="/contact">
+            <% } %> 
+              <i class="fas fa-lg fa-mobile-alt"></i> Contact Me</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="/about">About</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="/contact">Contact</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="/services">Services</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="/products">Products</a>
-          </li>
          
       </div>
     </div>
@@ -55,12 +81,19 @@
 </main>
 
 
-
+<!-- jumbotron title -->
 <div class="jumbotron jumbotron-fluid" style="background-color:#495152">
   <div class="container">
     <h1 class="display-4"><%= title %></h1>
   </div>
 </div>
+
+<!-- Footer -->
+<footer>
+  <nav class = "navbar fixed-bottom navbar-dark bg-dark">
+  <h6 class = "display-8 navbar-text">&copy; copyright 2020. All rights reserved</h6>
+  </nav> 
+</footer>
 
 <!-- JS scripting -->
   <script src="/scripts/app.js" ></script>
