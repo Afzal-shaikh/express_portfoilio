@@ -1,16 +1,5 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <!-- css link -->
-  <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
-  <link rel='stylesheet' href='/@fortawesome/fontawesome-free/css/all.min.css' />
-  <link rel='stylesheet' href='/content/app.css' />
-</head>
-<body>
 
+<%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
 
   
@@ -30,17 +19,8 @@
   </div>
 </div>
 
-<!-- Footer -->
-<footer>
-  <nav class = "navbar fixed-bottom navbar-dark bg-dark">
-  <h6 class = "display-8 navbar-text">&copy; copyright 2020. All rights reserved</h6>
-  </nav> 
-</footer>
 
-<!-- JS scripting -->
-  <script src="/scripts/app.js" ></script>
-  <script src="/jquery/dist/jquery.min.js" ></script>
-  <script src="/bootstrap/dist/js/bootstrap.min.js" ></script>
-</body>
-</html>
+
+<%- include partials/footer.ejs %>
+<%- include partials/bottom_nav.ejs %>
 
