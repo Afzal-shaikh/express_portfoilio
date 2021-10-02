@@ -1,17 +1,20 @@
   <!--My Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+
+     <!--Logo here -->
+     <a aria-current="page" href="/home">
+        <img src="Assets\images\logo.jpg" width="40px"/>
+      </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
 
-         <!--Logo here -->
-      <a aria-current="page" href="/home">
-        <img src="Assets\images\logo.jpg" width="40px"/>
-      </a>
+        
+     
 
         <li class="nav-item">
           <!--Navigate to Home -->
@@ -47,7 +50,7 @@
             <% } else { %>
               <a class="nav-link" aria-current="page" href="/services">
             <% } %> 
-              <i class="fas fa-lg fa-hand-holding-heart"></i> Services</a>
+              <i class="fas fa-lg fa-cogs"></i> Services</a>
           </li>
           <!--Navigate to Contact Me-->
           <li class="nav-item">
@@ -56,7 +59,7 @@
             <% } else { %>
               <a class="nav-link" aria-current="page" href="/contact">
             <% } %> 
-              <i class="fas fa-lg fa-mobile-alt"></i> Contact Me</a>
+              <i class="fas fa-lg fa-phone"></i> Contact Me</a>
           </li>
 
          
