@@ -1,26 +1,16 @@
+<!--
+fileName : index.ejs,
+Student  : Afzal Shaikh,
+Student ID : 301184760
+Created on : 02/10/2021,
+
+
+-->
 
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
 
-
-<!-- Main section -->
-<!--<main class="container">
-  <div class="jumbotron">
-    <h1 class="display-4"><%= title %></h1>
-  </div>
-
-</main> -->
-
-
-<!-- jumbotron title -->
-<!--
-<div class="jumbotron jumbotron-fluid" style="background-color:#495152">
-  <div class="container">
-    <h1 class="display-4"><%= title %></h1>
-  </div>
-</div>
--->
-
+<!-- Routinf of pages depending on title -->
 <% if (title == "Home") { %> 
   <%- include partials/home.ejs %>
 <% } else if (title == "About Me") { %> 
