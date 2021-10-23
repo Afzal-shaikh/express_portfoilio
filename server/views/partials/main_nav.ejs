@@ -9,9 +9,10 @@ Created on : 02/10/2021,
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
 
-     <!--Logo  -->
+
+        <!--Logo  -->
      <a aria-current="page" href="/home">
-        <img src="assets\images\logo.png" width="100px" height = "50px" style = "object-fit: contain ; " />
+        <img src="\assets\images\logo.png" width="100px" height = "50px" style = "object-fit: contain ; " />
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,6 +68,16 @@ Created on : 02/10/2021,
               <a class="nav-link" aria-current="page" href="/contact">
             <% } %> 
               <i class="fas fa-lg fa-phone"></i> Contact Me</a>
+          </li>
+
+           <!-- -Navigate to Business Contacts-->
+          <li class="nav-item">
+            <% if (title == "Business Contacts") { %>
+              <a class="nav-link active" aria-current="page" href="/contact-list">
+            <% } else { %>
+              <a class="nav-link" aria-current="page" href="/contact-list">
+            <% } %> 
+              <i class="fas fa-lg fa-briefcase"></i> Business Contacts</a>
           </li>
 
          
