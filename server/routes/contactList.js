@@ -5,29 +5,36 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+
+let passport = require('passport');
+
 let contactListController = require('../controllers/contactList');
 
-// connect to contact list
-let contacts = require('../models/contacts');
+// helper funtion for guarding routes
+function requireAuth(req , res ,next){
+    // check if user is logged in
+    if(!req.isAuthenticated()){
+        return res.redirect('/login')
+    }
+    next();
+}
 
 // GET Route for Contact List page - READ operation
-router.get('/', contactListController.displayContactList);
+router.get('/',requireAuth, contactListController.displayContactList);
 
 // GET Route for displaying Add Contact page - CREATE
-router.get('/add',  (req, res, next) =>{ 
-    res.render('businessContacts/add', {title: 'Add Contact'})
-});
+router.get('/add', requireAuth, contactListController.displayAddPage);
 
 // POST Route for processing Add Contact page - CREATE
-router.post('/add', contactListController.addContact);
+router.post('/add',requireAuth, contactListController.addContact);
 
 // GET Route for displaying Edit Contact page - UPDATE
-router.get('/edit/:id', contactListController.displayEditPage);
+router.get('/edit/:id',requireAuth, contactListController.displayEditPage);
 
 // POST Route for processing Edit Contact page - UPDATE
-router.post('/edit/:id', contactListController.processEditContact);
+router.post('/edit/:id',requireAuth, contactListController.processEditContact);
 
 // GET to perform Contact Deleteion - DELETE
-router.get('/delete/:id', contactListController.deleteContact);
+router.get('/delete/:id',requireAuth, contactListController.deleteContact);
 
 module.exports = router;

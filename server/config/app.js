@@ -6,16 +6,25 @@
 
 
 
-
+// Installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan'); // logger middleware
 
+
+//modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
 // database setup
 let mongoose = require('mongoose');
 let DB = require('./db');
+
 // point mongoose to DB URI
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -26,7 +35,7 @@ mongoDB.once('open', ()=> {
 })
 
 let indexRouter = require('../routes/index');
-let constactsRouter = require('../routes/contactList');
+let contactsRouter = require('../routes/contactList');
 // let usersRouter = require('./routes/users');
 
 let app = express();
@@ -42,11 +51,52 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-app.use('/', indexRouter);
-app.use('/contact-list', constactsRouter);
-// commented out users for Assignment1
 // app.use('/users', usersRouter);
 
+
+// setup express session
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+
+// initialize flash
+app.use(flash());
+
+
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport user Configuration
+
+// create a User Model Instance
+let userModel = require('../models/user');
+let User = userModel.User;
+
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
+// implement a User Authentication Strategy
+passport.use(User.createStrategy());
+
+
+
+// User.register(new User({
+//   username: 'afzal',
+//   email: 'afzal@gmail.com',
+//   displayName: 'Afzal'
+// }), 'afzal1234');
+
+app.use('/', indexRouter);
+app.use('/contact-list', contactsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -60,7 +110,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {title : 'Error'});
 });
 
 module.exports = app;
