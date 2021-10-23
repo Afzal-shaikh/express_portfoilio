@@ -16,7 +16,12 @@ module.exports.displayContactList = (req, res, next) => {
         if(err) {
             return console.error(err);
         } else {
-            res.render('businessContacts/contactList', {title: 'Business Contacts', contactList: contactList})
+            res.render('businessContacts/contactList', {title: 'Business Contacts',
+             contactList: contactList.sort((a,b) =>{
+                let nameSorting = [a.name, b.name].sort();
+                return nameSorting[0] == a.name ? -1 : 1;
+            })
+            })
         }
     })
 }
