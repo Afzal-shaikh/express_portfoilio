@@ -20,7 +20,8 @@ module.exports.displayContactList = (req, res, next) => {
              contactList: contactList.sort((a,b) =>{
                 let nameSorting = [a.name, b.name].sort();
                 return nameSorting[0] == a.name ? -1 : 1;
-            })
+            }),
+            displayName : req.user ? req.user.displayName : ""
             })
         }
     })
